@@ -1,84 +1,83 @@
-# Huntington Disease Stage Prediction
 
-This project aims to predict the **stage of Huntington’s Disease** based on various clinical features using supervised machine learning techniques.
+# 🧠 Huntington's Disease Stage Prediction
 
-## 📂 Dataset
+This project was developed as part of a university **Probability course assignment**, aiming to predict the stage of Huntington’s disease using real-world medical data and machine learning techniques.
 
-We used a publicly available dataset from Kaggle:
-[Kaggle Dataset Link](https://www.kaggle.com/datasets/rajmohnani12/huntington-disease-dataset)
-
-After initial preprocessing and feature selection, the dataset was standardized and class imbalance was addressed using SMOTE.
+The project demonstrates how to handle class imbalance, preprocess medical datasets, train classification models, and prepare predictions using neural networks.
 
 ---
 
-## 🧠 Model
-
-We trained a **deep learning model** using Keras:
-
-- 3 hidden layers: 128 → 64 → 32 (ReLU)
-- Output layer: 4-class Softmax
-- Loss function: Sparse Categorical Crossentropy
-- Optimizer: Adam
-
-The model achieved good performance on the test set and was saved as `.keras` along with the scaler.
-
----
-
-## 🛠️ Features
-
-- SMOTE for class balancing
-- Scikit-learn + Keras + Tensorflow
-- Independent scripts for preprocessing, training, and prediction
-- Presentation-ready version included
-
----
-
-## 🧪 Project Structure
+## 📁 Project Structure
 
 ```
-huntington-disease-stage-prediction/
+.
+├── data/
+│   ├── Huntington_Disease_Dataset.csv         # Original dataset
+│   ├── temizlenmis_veri_seti.csv              # Cleaned dataset
+│   └── test_veri_seti2.csv                    # Final test data
 │
-├── data/                # Raw and processed data
-├── models/              # Saved model and scaler
-├── presentation_ready/  # Folder used for final presentation
-├── images/              # Visual results
-├── notebooks/           # Optional Jupyter notebooks
-├── scripts/             # Main scripts used in pipeline
-├── docs/                # Presentation and additional documentation
+├── models/
+│   ├── hd_stage_model_smote.keras             # Trained neural network model
+│   └── scaler_smote.save                      # Scaler used for normalization
+│
+├── scripts/
+│   ├── verisetini_duzenleme.py                # Preprocessing steps
+│   ├── smote.py                               # SMOTE oversampling
+│   ├── modelEgitimKayit.py                    # Model training and saving
+│   ├── categoricToFloat.py                    # Type conversion
+│   └── inputTahmin.py                         # Input-based prediction
+│
+├── presentation_ready/
+│   ├── sunum_kod1.py                          # Streamlined presentation code
+│   └── sunum_kod2.py
+│
 └── README.md
 ```
 
 ---
 
-## 🧑‍🤝‍🧑 Project Background
+## 📊 Dataset
 
-This was a **team-based university graduation project**. The group was split into two sub-teams:
+We used the [Huntington Disease Dataset on Kaggle](https://www.kaggle.com/datasets/rajmohnani12/huntington-disease-dataset), which includes anonymized patient data and disease stage labels (0–3).
 
-- Our team focused on data-driven disease stage prediction using YOLO, SMOTE, and deep learning.
-- The other team developed a **ROS + Gazebo simulation environment** to simulate a robot-assisted testing setup.
-
----
-
-## 🔍 Sample Results
-
-Sample classification results are included in the `images/` directory.
+Due to severe class imbalance, **SMOTE (Synthetic Minority Over-sampling Technique)** was applied to the training data.
 
 ---
 
-## 🔗 How to Run
+## 🧠 Model Details
 
-```bash
-python scripts/modelEgitimKayit.py
-```
+- Neural Network (Keras - TensorFlow backend)
+- 3 Hidden Layers: 128 → 64 → 32 units
+- Activation Functions: ReLU + Softmax
+- Loss Function: sparse_categorical_crossentropy
+- Optimizer: Adam
+- Trained for 30 epochs with batch size 32
+- Final test accuracy: ~%75
 
-> Make sure to install dependencies listed in `requirements.txt` (not included here, feel free to add later).
+---
+
+## 🚀 Usage
+
+1. Run `scripts/verisetini_duzenleme.py` to clean the dataset.
+2. Apply oversampling via `scripts/smote.py`
+3. Train and save model using `scripts/modelEgitimKayit.py`
+4. Make predictions with `scripts/inputTahmin.py` using your own input.
+
+---
+
+## 👥 Team & Collaboration
+
+This project was conducted by a **three-person team** as part of a course project. While this version is educational, a more advanced version is planned for academic publishing with a new dataset and enhanced methods.
+
+---
+
+## 📌 Notes
+
+- This project is shared as **open source** for educational purposes.
+- You are welcome to fork and build upon it for similar classification tasks.
 
 ---
 
 ## 📬 Contact
 
-GitHub: [ccanuncc](https://github.com/ccanuncc)
-
----
-
-**Note**: This version is a clean, modular version of our final project presentation. For academic publication, a refined version using a different dataset will be developed.
+For questions or collaborations, feel free to reach out via GitHub or LinkedIn.
