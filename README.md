@@ -12,7 +12,6 @@ The project demonstrates how to handle class imbalance, preprocess medical datas
 ```
 .
 ├── data/
-│   ├── Huntington_Disease_Dataset.csv         # Original dataset
 │   ├── temizlenmis_veri_seti.csv              # Cleaned dataset
 │   └── test_veri_seti2.csv                    # Final test data
 │
