@@ -80,3 +80,9 @@ This project was conducted by a **three-person team** as part of a course projec
 ## 📬 Contact
 
 For questions or collaborations, feel free to reach out via GitHub or LinkedIn.
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
+
