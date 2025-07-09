@@ -1,0 +1,1 @@
+This is a placeholder for verisetini_düzenleme.py
